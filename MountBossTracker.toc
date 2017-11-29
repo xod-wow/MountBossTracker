@@ -1,0 +1,9 @@
+## Interface: 70100
+## Title: MountBossTracker
+## Version: @project-version@
+## Author: Xodiv-Nagrand
+## Email: mib@post.com
+## SavedVariables: MountBossTrackerDB
+
+embeds.xml
+MountBossTracker.lua

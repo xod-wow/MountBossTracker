@@ -18,12 +18,13 @@ MBT.BossTable = {
         instance = "Auchindoun: Sethekk Halls",
         encounter = 3,
     },
+--[[
     {
         name = "Attumen the Huntsman",
         instance = "Karazhan",
         encounter = 1,
     },
-
+]]
     {   header = "Wrath of the Lich King", },
     {
         name = "Archavon",
@@ -40,14 +41,16 @@ MBT.BossTable = {
         instance = "Icecrown Citadel",
         encounter = 12,
     },
+--[[
     {
         name = "Onyxia",
         instance = "Onyxia's Lair",
         encounter = 1,
     },
-
+]]
     {   header = "Cataclysm", },
 
+--[[
     {
         name = "Alysrazor",
         instance = "Firelands",
@@ -68,6 +71,7 @@ MBT.BossTable = {
         instance = "Dragon Soul",
         encounter = 8,
     },
+]]
     {
         name = "Al'Akir",
         instance = "Throne of the Four Winds",
@@ -85,11 +89,13 @@ MBT.BossTable = {
     },
 
     {   header = "Mists of Pandaria", },
+--[[
     {
         name = "Elegon",
         instance = "Mogu'shan Vaults",
         encounter = 5,
     },
+]]
     {
         name = "Horridon",
         instance = "Throne of Thunder",

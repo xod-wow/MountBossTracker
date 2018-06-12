@@ -13,6 +13,7 @@ MBT.CurrentTooltipLines = { }
 
 MBT.BossTable = {
     {   header = "Burning Crusade", },
+
     {
         name = "Anzu",
         instance = "Auchindoun: Sethekk Halls",
@@ -25,7 +26,9 @@ MBT.BossTable = {
         encounter = 1,
         mountids = { 168, },
     },
+
     {   header = "Wrath of the Lich King", },
+
     {
         name = "Archavon",
         instance = "Vault of Archavon",

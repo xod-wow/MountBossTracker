@@ -17,134 +17,178 @@ MBT.BossTable = {
         name = "Anzu",
         instance = "Auchindoun: Sethekk Halls",
         encounter = 3,
+        mountids = { 185, },
     },
---[[
     {
         name = "Attumen the Huntsman",
         instance = "Karazhan",
         encounter = 1,
+        mountids = { 168, },
     },
-]]
     {   header = "Wrath of the Lich King", },
     {
         name = "Archavon",
         instance = "Vault of Archavon",
         encounter = 1,
+        mountids = { 287, },
     },
     {
         name = "Yogg-Saron",
         instance = "Ulduar",
         encounter = 16,
+        mountids = { 304, },
     },
     {
         name = "The Lich King",
         instance = "Icecrown Citadel",
         encounter = 12,
+        mountids = { 363, },
     },
---[[
     {
         name = "Onyxia",
         instance = "Onyxia's Lair",
         encounter = 1,
+        mountids = { 349, },
     },
-]]
+
     {   header = "Cataclysm", },
 
---[[
     {
         name = "Alysrazor",
         instance = "Firelands",
         encounter = 4,
+        mountids = { 425, },
     },
     {
         name = "Ragnaros",
         instance = "Firelands",
         encounter = 7,
+        mountids = { 415, },
     },
     {
         name = "Ultraxion",
         instance = "Dragon Soul",
         encounter = 5,
+        mountids = { 445, },
     },
     {
         name = "Deathwing",
         instance = "Dragon Soul",
         encounter = 8,
+        mountids = { 442, 444, },
     },
-]]
     {
         name = "Al'Akir",
         instance = "Throne of the Four Winds",
         encounter = 2,
+        mountids = { 396, },
     },
     {
         name = "Bloodlord Mandokir",
         instance = "Zul'Gurub",
         encounter = 2,
+        mountids = { 410, },
     },
     {
         name = "High Priestess Kilnara",
         instance = "Zul'Gurub",
         encounter = 4,
+        mountids = { 411, },
     },
 
     {   header = "Mists of Pandaria", },
---[[
+
     {
         name = "Elegon",
         instance = "Mogu'shan Vaults",
         encounter = 5,
+        mountids = { 478, },
     },
-]]
     {
         name = "Horridon",
         instance = "Throne of Thunder",
         encounter = 2,
+        mountids = { 531, },
     },
     {
         name = "Ji-Kun",
         instance = "Throne of Thunder",
         encounter = 6,
+        mountids = { 543, },
     },
     {
         name = "Sha of Anger",
+        mountids = { 473, },
     },
     {
         name = "Galleon",
+        mountids = { 515, },
     },
     {
         name = "Nalak",
+        mountids = { 542, },
     },
     {
         name = "Oondasta",
+        mountids = { 533, },
     },
     {
         name = "Garrosh Hellscream",
         instance = "Siege of Orgrimmar",
         encounter = 14,
+        mountids = { 559, },
     },
 
     {   header = "Warlords of Draenor", },
+
     {
         name = "Garrison Invasion - Gold",
+        mountids = { 616, 626, 642, 649, },
     },
     {
         name = "Blackhand",
         instance = "Blackrock Foundry",
         encounter = 10,
+        mountids = { 613, },
     },
     {
         name = "Rukhmar",
+        mountids = { 634, },
     },
 
     {   header = "Legion", },
 
     {
+        name = "Attumen the Huntsman",
+        instance = "Return to Karazhan",
+        encounter = 5,
+        mountids = { 633 },
+    },
+    {
         name = "Gul'dan",
         instance = "The Nighthold",
         encounter = 10,
+        mountids = { 633, 791, },
+    },
+    {
+        name = "Argus the Unmaker",
+        instance = "Antorus, the Burning Throne",
+        encounter = 11,
+        mountids = { 954, },
     },
 }
+
+-- Missing at least one of the argument mountIDs
+function MBT:MissingMounts(...)
+    local id
+    for i = 1, select('#', ...) do
+        id = select(i, ...)
+        if false == select(11, C_MountJournal.GetMountInfoByID(id)) then
+            return true
+        end
+    end
+    return false
+end
 
 function MBT:OnEvent(e, arg1, arg2)
     if e == "UPDATE_INSTANCE_INFO" then
@@ -184,6 +228,8 @@ function MBT:Update()
                 tinsert(MBT.CurrentTooltipLines, '')
             end
             tinsert(MBT.CurrentTooltipLines, b.header)
+        elseif b.mountids and MBT:MissingMounts(unpack(b.mountids)) == false then
+            -- skip
         elseif MBT:IsBossDead(b) then
             tinsert(MBT.CurrentTooltipLines, format("  |cffff0000%s|r", b.name))
         else

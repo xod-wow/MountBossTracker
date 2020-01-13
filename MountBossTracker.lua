@@ -5,6 +5,11 @@
   Simple databroker tooltip to see which bosses that drop mounts you've
   already killed this week.
 
+  Copyright 2017-2020 Mike Battersby
+
+  Released under the terms of the GNU General Public License version 2 (GPLv2).
+  See the file LICENSE.txt.
+
 ----------------------------------------------------------------------------]]--
 
 local MBT = CreateFrame("Frame", "MBT", UIParent)

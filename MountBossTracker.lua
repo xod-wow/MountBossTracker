@@ -160,6 +160,12 @@ MBT.BossTable = {
         mountids = { 613, },
     },
     {
+        name = "Archimonde",
+        instance = "Hellfire Citadel",
+        encounter = 13,
+        mountids = { 751, },
+    },
+    {
         name = "Rukhmar",
         mountids = { 634, },
     },
@@ -183,6 +189,39 @@ MBT.BossTable = {
         instance = "Antorus, the Burning Throne",
         encounter = 11,
         mountids = { 954, },
+    },
+
+    {   header = "Battle for Azeroth", },
+
+    {
+        name = "Harlan Sweete",
+        instance = "Freehold",
+        encounter = 4,
+        mountids = { 995, },
+    },
+    {
+        name = "Unbound Abomination",
+        instance = "The Underrot",
+        encounter = 4,
+        mountids = { 1053, },
+    },
+    {
+        name = "HK-8 Aerial Oppression Unit",
+        instance = "Operation: Mechagon",
+        encounter = 4,
+        mountids = { 1252, },
+    },
+    {
+        name = "Dazar, The First King",
+        instance = "Kings' Rest",
+        encounter = 4,
+        mountids = { 1040, },
+    },
+    {
+        name = "N'Zoth the Corruptor",
+        instance = "Ny'alotha, the Waking City",
+        encounter = 12,
+        mountids = { 1293, },
     },
 }
 

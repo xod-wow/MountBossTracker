@@ -176,7 +176,7 @@ MBT.BossTable = {
         name = "Attumen the Huntsman",
         instance = "Return to Karazhan",
         encounter = 5,
-        mountids = { 633 },
+        mountids = { 875 },
     },
     {
         name = "Gul'dan",
